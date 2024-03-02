@@ -1,0 +1,107 @@
+/* Estilos para o body */
+body {
+    background: linear-gradient(135deg, #ccc, #000);
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: goldenrod;
+    margin: 0px;  
+    padding: 0px;
+}
+
+/* Estilos para o P */
+p {
+    text-align: left;
+    font-size: 13px;
+    color: #000;
+}
+
+/* Estilos para o organograma */
+.organograma {
+    display: flex;
+    flex-direction: column; /* Organiza os níveis verticalmente */
+    align-items: center;
+    margin-top: 0px;
+}
+
+.nivel {
+    display: flex;
+    justify-content: center;
+    margin: 120px 0; /* Espaçamento entre os níveis */
+}
+
+.cargo {
+    background-color: #f2f2f2;
+    border: 10px  #fff;
+    padding: 10px;
+    margin: 0 40px; /* Espaçamento entre os cargos */
+    text-align: center;
+    max-width: 200px; /* Ajuste a largura máxima para garantir a organização */
+    position: relative; /* Para posicionar os elementos filhos */
+    perspective: 1000px; /* Define a perspectiva para a animação de virar */
+    cursor: pointer; /* Muda o cursor para uma mão quando passa sobre o card */
+}
+
+/* Conteúdo da frente do card */
+.conteudo-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.8s; /* Animação de transição */
+    backface-visibility: hidden; /* Esconde a face traseira quando a frente está visível */
+}
+
+/* Conteúdo da parte traseira do card */
+.conteudo-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.8s; /* Animação de transição */
+    transform: rotateY(180deg); /* Começa com a face traseira virada */
+    backface-visibility: hidden; /* Esconde a face dianteira quando a parte traseira está visível */
+}
+
+/* Quando passa o mouse sobre o card */
+.cargo:hover .conteudo-front {
+    transform: rotateY(-180deg); /* Vira para mostrar a parte traseira */
+}
+
+/* Quando passa o mouse sobre o card */
+.cargo:hover .conteudo-back {
+    transform: rotateY(0deg); /* Vira para mostrar a parte dianteira */
+}
+
+/* Estilos para os diferentes cargos */
+.coordenador {
+    width: 160px; /* Largura ajustada para coordenador */
+}
+
+.analista {
+    width: 140px; /* Largura padrão para analista */
+}
+
+.grupo-analista {
+    display: flex; /* Alinha os analistas lado a lado */
+}
+
+.assistente,
+.frentista {
+    width: 140px; /* Largura padrão para assistente e frentista */
+}
+
+/* Estilo para a imagem dentro do cargo */
+.cargo img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.quadrado {
+    background-color: #eee; /* Cor do quadrado cinza claro */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+}
+
